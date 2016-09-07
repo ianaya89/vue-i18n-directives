@@ -1,9 +1,10 @@
-const webpack        = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const path           = require('path');
-const env            = require('yargs').argv.mode;
+const path    = require('path');
+const env     = require('yargs').argv.mode;
+const webpack = require('webpack');
 
-const libraryName = 'x2-service-i18n';
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+
+const libraryName = 'vue-i18n-directives';
 
 const plugins = [];
 let outputFile;

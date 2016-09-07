@@ -1,16 +1,16 @@
 {
-  "name": "@fintechdev/x2-service-i18n",
+  "name": "vue-i18n-directives",
   "version": "0.0.1",
-  "description": "X2 Service i18n for Client Side Applications",
-  "main": "lib/x2-service-i18n.min.js",
-  "author": "Ignacio Anaya <ignacio@fintechdev.net>",
+  "description": "Helper directives for vue & vue-i18n",
+  "main": "lib/vue-i18n-directives.min.js",
+  "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fintechdev/x2-service-i18n.git"
+    "url": "https://github.com/ianaya89/vue-i18n-directives.git"
   },
   "keywords": [
-    "i18n"
+    "i18n", "vue", "translate", "directive"
   ],
   "scripts": {
     "build": "webpack --mode=build",
@@ -49,6 +49,7 @@
     "pre-commit": "^1.1.3",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",
+    "vue": "^1.0.26",
     "webpack": "1.12.9",
     "webpack-merge": "^0.14.1",
     "yargs": "3.32.0"
