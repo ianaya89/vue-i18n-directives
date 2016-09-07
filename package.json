@@ -1,6 +1,6 @@
 {
   "name": "vue-i18n-directives",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Helper directives for vue & vue-i18n",
   "main": "lib/vue-i18n-directives.min.js",
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
@@ -10,7 +10,10 @@
     "url": "https://github.com/ianaya89/vue-i18n-directives.git"
   },
   "keywords": [
-    "i18n", "vue", "translate", "directive"
+    "i18n",
+    "vue",
+    "translate",
+    "directive"
   ],
   "scripts": {
     "build": "webpack --mode=build",
@@ -50,6 +53,7 @@
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",
     "vue": "^1.0.26",
+    "vue-i18n": "^4.4.0",
     "webpack": "1.12.9",
     "webpack-merge": "^0.14.1",
     "yargs": "3.32.0"

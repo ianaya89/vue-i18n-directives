@@ -1,8 +1,11 @@
 /* global describe */
-import Vue from 'vue';
-import vueI18nDirectives from '../../src';
+import Vue      from 'vue';
+import VueI18n from 'vue-i18n';
 
-vueI18nDirectives(Vue);
+import VueI18nDirevtives from '../../src';
+
+Vue.use(VueI18n);
+Vue.use(VueI18nDirevtives);
 
 describe('vue-i18n-directives -> ', () => {
 
