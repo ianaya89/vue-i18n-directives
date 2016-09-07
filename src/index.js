@@ -2,6 +2,8 @@
 import tDirective  from './t-directive';
 import tpDirective from './tp-directive';
 
+
+
 if (!window.Vue) { throw new Error('Missing Vue dependency.'); }
 
 Vue.use(Vue => {
