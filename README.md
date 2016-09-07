@@ -28,7 +28,7 @@ Vue.use(VueI18nDirevtives);
 // ...
 ```
 
-`component.js`
+`Component.vue`
 ```html
 <script>
   export default {
