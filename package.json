@@ -1,6 +1,6 @@
 {
   "name": "vue-i18n-directives",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper directives for vue & vue-i18n",
   "main": "lib/vue-i18n-directives.min.js",
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
