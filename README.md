@@ -1,6 +1,6 @@
 # x2-service-i18n
 
-:flags: X2 Service i18n for Client Side Applications
+:flags:  Helper directives for vue & vue-i18n
 
 
 ```bash
