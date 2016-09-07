@@ -1,4 +1,4 @@
-# x2-service-i18n
+# vue-i18n-directives
 
 :flags:  Helper directives for vue & vue-i18n
 
