@@ -10,6 +10,10 @@
 ### Installation
 `$ npm i -S vue-i18n-directives`
 
+### Directives
+1. `v-t` => Translate and append text through element `innerHTML`.
+2. `v-tp` => Translate and set text to input `placeholder`.
+
 ### Usage
 `main.js`
 ```javascript
