@@ -20,7 +20,8 @@
     "dev": "webpack --progress --colors --watch --mode=dev",
     "test": "karma start karma.conf.js --single-run",
     "check-cover": "open coverage/lcov-report/index.html",
-    "eslint": "eslint . --ext .js"
+    "eslint": "eslint . --ext .js",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "babel": "6.3.13",
