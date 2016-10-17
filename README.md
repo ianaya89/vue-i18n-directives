@@ -20,10 +20,10 @@
 import Vue     from 'vue';
 import VueI18n from 'vue-i18n';
 
-import VueI18nDirevtives from 'vue-i18n-directives';
+import VueI18nDirectives from 'vue-i18n-directives';
 
 Vue.use(VueI18n);
-Vue.use(VueI18nDirevtives);
+Vue.use(VueI18nDirectives);
 
 // ...
 ```
