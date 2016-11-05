@@ -1,10 +1,10 @@
 # vue-i18n-directives
 
-:flags:  Helper directives for vue & vue-i18n
+:flags:  Helper directives for [Vue.js](https://vuejs.org/) & [vue-i18n](https://github.com/kazupon/vue-i18n).
 
 
 ### Prerequisites
-1. [vue](https://github.com/vuejs/vue)
+1. [Vue.js](https://github.com/vuejs/vue)
 2. [vue-i18n](https://github.com/kazupon/vue-i18n)
 
 ### Installation
