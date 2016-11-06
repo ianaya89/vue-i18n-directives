@@ -37,8 +37,8 @@ Vue.use(VueI18nDirectives);
 </script>
 
 <template lang='pug'>
-  h1(v-t='"user.name"')
-  input(v-tp='"user.label"')
+  h1(v-t=' "user.name" ')
+  input(v-tp=' "user.label" ')
 </template>
 
 ```
