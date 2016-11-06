@@ -3,3 +3,4 @@ src
 .eslintignore
 karma.conf.js
 .babelrc
+webpack.config.js
