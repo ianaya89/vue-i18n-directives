@@ -40,12 +40,12 @@ Vue.use(VueI18nDirectives);
 </script>
 
 <template lang='pug'>
-  h1(v-t=' "user.name" ') <!--> normal translation <--->
-  input(v-tp=' "user.password" ') <!--> placeholder translation <--->
+  h1(v-t=' "user.name" ') <!- normal translation ->
+  input(v-tp=' "user.password" ') <!- placeholder translation ->
 
-  p(v-tc=' "user.jobTitle" ') <!--> capitalize translation <--->
-  p(v-tu=' "user.role" ') <!--> uppercase translation <--->
-  p(v-tl=' "user.nickname" ') <!--> lowercase translation <--->
+  p(v-tc=' "user.jobTitle" ') <!- capitalize translation ->
+  p(v-tu=' "user.role" ') <!- uppercase translation ->
+  p(v-tl=' "user.nickname" ') <!- lowercase translation ->
 </template>
 
 ```
