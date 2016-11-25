@@ -13,6 +13,9 @@
 ### Directives
 1. `v-t` => Translate and append text through element `innerHTML`.
 2. `v-tp` => Translate and set text to input `placeholder`.
+3. `v-tc` => Translate and append capitalized text through element `innerHTML`.
+4. `v-tu` => Translate and append uppercased text through element `innerHTML`.
+5. `v-tl` => Translate and append lowercased text through element `innerHTML`.
 
 ### Usage
 `main.js`
@@ -37,8 +40,12 @@ Vue.use(VueI18nDirectives);
 </script>
 
 <template lang='pug'>
-  h1(v-t=' "user.name" ')
-  input(v-tp=' "user.label" ')
+  h1(v-t=' "user.name" ') <!--> normal translation <--->
+  input(v-tp=' "user.password" ') <!--> placeholder translation <--->
+
+  p(v-tc=' "user.jobTitle" ') <!--> capitalize translation <--->
+  p(v-tu=' "user.role" ') <!--> uppercase translation <--->
+  p(v-tl=' "user.nickname" ') <!--> lowercase translation <--->
 </template>
 
 ```
