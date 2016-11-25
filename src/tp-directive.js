@@ -1,5 +1,6 @@
 export default {
   update(val) {
-    this.el.placeholder = this.vm.$t(val);
+    const placeholder = this.vm.$t ? this.vm.$t(val) : val;
+    this.el.placeholder += placeholder;
   }
 };
