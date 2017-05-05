@@ -29,12 +29,12 @@ const config = {
   module: {
     loaders: [
       {
-        test: /(\.jsx|\.js)$/,
+        test: /\.js$/,
         loader: 'babel',
         exclude: /(node_modules|bower_components)/
       },
       {
-        test: /(\.jsx|\.js)$/,
+        test: /\.js$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
       }
