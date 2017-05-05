@@ -69,7 +69,7 @@ $ npm run build
 ```
 
 ## License
-[MIT License](https://github.com/ndelvalle/vue-esc/blob/master/LICENSE)
+[MIT License](https://github.com/ndelvalle/vue-i18n-directive/blob/master/LICENSE)
 
 ## Code Style
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
