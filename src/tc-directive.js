@@ -1,6 +1,9 @@
 export default {
-  update (val) {
-    let text = this.vm.$t ? this.vm.$t(val) : val
+  update (el, binding, vnode) {
+    const vm = vnode.context
+    if (vm.i18n === false) { return binding.value }
+
+    let text = vm.$t ? vm.$t(binding.value) : binding.value
 
     if (text) {
       text = text.replace(/\w\S*/g, (txt) =>
@@ -8,6 +11,6 @@ export default {
       )
     }
 
-    this.el.innerHTML += text
+    el.innerHTML += text
   }
 }

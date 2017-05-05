@@ -1,6 +1,9 @@
 export default {
-  update (val) {
-    const placeholder = this.vm.$t ? this.vm.$t(val) : val
-    this.el.placeholder += placeholder
+  update (el, binding, vnode) {
+    const vm = vnode.context
+    if (vm.i18n === false) { return binding.value }
+
+    const placeholder = vm.$t ? vm.$t(binding.value) : binding.value
+    el.placeholder += placeholder
   }
 }
