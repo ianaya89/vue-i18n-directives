@@ -1,18 +1,18 @@
-const merge      = require('webpack-merge');
-const baseConfig = require('./webpack.config');
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config')
 
 const webpackConfig = merge(baseConfig, {
   // use inline sourcemap for karma-sourcemap-loader
   devtool: '#inline-source-map'
-});
+})
 
-delete webpackConfig.entry;
+delete webpackConfig.entry
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['mocha', 'sinon-chai'],
-    reporters : ['spec', 'coverage'],
+    reporters: ['spec', 'coverage'],
     files: ['test/index.js'],
     exclude: [],
     preprocessors: {
@@ -29,16 +29,16 @@ module.exports = function(config) {
     coverageReporter: {
       watermarks: {
         statements: [60, 70],
-        functions : [60, 70],
-        branches  : [60, 70],
-        lines     : [60, 70]
+        functions: [60, 70],
+        branches: [60, 70],
+        lines: [60, 70]
       },
       includeAllSources: true,
-      dir      : './coverage',
+      dir: './coverage',
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }
       ]
     }
-  });
-};
+  })
+}
