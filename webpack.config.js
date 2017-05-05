@@ -1,50 +1,40 @@
+const isProd = process.env.ENV === 'prod'
 const path = require('path')
-const env = require('yargs').argv.mode
-const webpack = require('webpack')
-
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 
 const libraryName = 'vue-i18n-directives'
-
-const plugins = []
-let outputFile
-
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }))
-  outputFile = `${libraryName}.min.js`
-} else {
-  outputFile = `${libraryName}.js`
-}
+const projectRoot = path.resolve(__dirname, '/')
+const outputFile = isProd ? `${libraryName}.min.js` : `${libraryName}.js`
 
 const config = {
   entry: `${__dirname}/src/index.js`,
-  devtool: 'source-map',
+
+  devtool: isProd ? 'source-map' : false,
+
   output: {
-    path: `${__dirname}/lib`,
+    path: `${__dirname}/dist`,
     filename: outputFile,
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
+
   module: {
-    loaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'eslint-loader',
+        include: projectRoot,
         exclude: /(node_modules|bower_components)/
       },
       {
         test: /\.js$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
+        loader: 'babel-loader',
+        include: projectRoot,
+        exclude: /(node_modules|bower_components)/
       }
     ]
-  },
-  resolve: {
-    root: path.resolve('./src'),
-    extensions: ['', '.js']
-  },
-  plugins
+  }
 }
 
 module.exports = config
