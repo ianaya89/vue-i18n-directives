@@ -74,8 +74,6 @@ $ npm run build
 ## Code Style
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
 
-### TODO
-* Add unit tests
 
 ___
 **This project was built with [yeoman](http://yeoman.io/) and [generator-vue-component](https://github.com/ianaya89/generator-vue-component) ❤️**
