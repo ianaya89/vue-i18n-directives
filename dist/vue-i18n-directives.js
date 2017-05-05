@@ -226,13 +226,17 @@ var _tlDirective2 = _interopRequireDefault(_tlDirective);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (Vue) {
-  Vue.directive('t', _tDirective2.default);
-  Vue.directive('tp', _tpDirective2.default);
-  Vue.directive('tc', _tcDirective2.default);
-  Vue.directive('tu', _tuDirective2.default);
-  Vue.directive('tl', _tlDirective2.default);
+var plugin = {
+  install: function install(Vue) {
+    Vue.directive('t', _tDirective2.default);
+    Vue.directive('tp', _tpDirective2.default);
+    Vue.directive('tc', _tcDirective2.default);
+    Vue.directive('tu', _tuDirective2.default);
+    Vue.directive('tl', _tlDirective2.default);
+  }
 };
+
+exports.default = plugin;
 
 /***/ })
 /******/ ]);
