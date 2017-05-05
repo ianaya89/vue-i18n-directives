@@ -3,8 +3,8 @@
 > :flags:  Helper directives for [Vue.js](https://vuejs.org/) & [vue-i18n](https://github.com/kazupon/vue-i18n).
 
 ### Support
- Vue.js 2 ➡️ `vue-i18n-directives@>=2.0.0` [master]
- Vue.js 1 ➡️ `vue-i18n-directives@>=1.0.0`
+* Vue.js 2 ➡️ `vue-i18n-directives@>=2.0.0` [master]
+* Vue.js 1 ➡️ `vue-i18n-directives@>=1.0.0`
 
 ### Prerequisites
 1. [Vue.js](https://github.com/vuejs/vue)
