@@ -87,9 +87,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  update: function update(val) {
-    var text = this.vm.$t ? this.vm.$t(val) : val;
-    this.el.innerHTML += text;
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var text = vm.$t ? vm.$t(binding.value) : binding.value;
+    el.innerHTML += text;
   }
 };
 
@@ -104,8 +109,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  update: function update(val) {
-    var text = this.vm.$t ? this.vm.$t(val) : val;
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var text = vm.$t ? vm.$t(binding.value) : binding.value;
 
     if (text) {
       text = text.replace(/\w\S*/g, function (txt) {
@@ -113,7 +123,7 @@ exports.default = {
       });
     }
 
-    this.el.innerHTML += text;
+    el.innerHTML += text;
   }
 };
 
@@ -128,9 +138,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  update: function update(val) {
-    var text = this.vm.$t ? this.vm.$t(val) : val;
-    this.el.innerHTML += text.toLowerCase();
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var text = vm.$t ? vm.$t(binding.value) : binding.value;
+    el.innerHTML += text.toLowerCase();
   }
 };
 
@@ -145,9 +160,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  update: function update(val) {
-    var placeholder = this.vm.$t ? this.vm.$t(val) : val;
-    this.el.placeholder += placeholder;
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var placeholder = vm.$t ? vm.$t(binding.value) : binding.value;
+    el.placeholder += placeholder;
   }
 };
 
@@ -162,9 +182,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  update: function update(val) {
-    var text = this.vm.$t ? this.vm.$t(val) : val;
-    this.el.innerHTML += text.toUpperCase();
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var text = vm.$t ? vm.$t(binding.value) : binding.value;
+    el.innerHTML += text.toUpperCase();
   }
 };
 
