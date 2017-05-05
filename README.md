@@ -2,6 +2,10 @@
 
 :flags:  Helper directives for [Vue.js](https://vuejs.org/) & [vue-i18n](https://github.com/kazupon/vue-i18n).
 
+### Support
+ Vue.js 2 ➡️ `vue-i18n-directives@>=2.0.0` [master]
+ Vue.js 1 ➡️ `vue-i18n-directives@>=1.0.0`
+
 
 ### Prerequisites
 1. [Vue.js](https://github.com/vuejs/vue)
@@ -9,6 +13,7 @@
 
 ### Installation
 `$ npm i -S vue-i18n-directives`
+`$ yarn add vue-i18n-directives`
 
 ### Directives
 1. `v-t` => Translate and append text through element `innerHTML`.
@@ -18,8 +23,8 @@
 5. `v-tl` => Translate and append lowercased text through element `innerHTML`.
 
 ### Usage
-`main.js`
 ```javascript
+// main.js
 import Vue     from 'vue';
 import VueI18n from 'vue-i18n';
 
@@ -31,27 +36,28 @@ Vue.use(VueI18nDirectives);
 // ...
 ```
 
-`Component.vue`
 ```html
 <script>
+  // Component.vue
+
   export default {
     name: 'Component'
   };
 </script>
 
-<template lang='pug'>
-  h1(v-t=' "user.name" ')         <!- normal translation ->
-  input(v-tp=' "user.password" ') <!- placeholder translation ->
+<template lang="pug">
+  <h1 v-t="'user.name'"><h1>        <!-- normal translation -->
+  <input v-tp="user.password'"/>    <!-- placeholder translation -->
 
-  p(v-tc=' "user.jobTitle" ')     <!- capitalize translation ->
-  p(v-tu=' "user.role" ')         <!- uppercase translation ->
-  p(v-tl=' "user.nickname" ')     <!- lowercase translation ->
+  <p v-tc="'user.jobTitle'" />    <!-- capitalize translation -->
+  <p v-tu="'user.role'" />         <!-- uppercase translation -->
+  <p v-tl="'user.nickname'" />     <!-- lowercase translation -->
 </template>
 
 ```
 
 
-### Development Setup
+### Development
 
 ```bash
 # dev mode
