@@ -4,6 +4,6 @@ export default {
     if (!vm.i18n) { return binding.value; }
 
     const text = vm.$t ? vm.$t(binding.value) : binding.value;
-    this.el.innerHTML += text.toLowerCase();
+    el.innerHTML += text.toLowerCase();
   }
 };

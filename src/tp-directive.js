@@ -4,6 +4,6 @@ export default {
     if (!vm.i18n) { return binding.value; }
 
     const placeholder = vm.$t ? vm.$t(binding.value) : binding.value;
-    this.el.placeholder += placeholder;
+    el.placeholder += placeholder;
   }
 };
