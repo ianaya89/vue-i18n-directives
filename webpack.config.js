@@ -1,50 +1,40 @@
-const path    = require('path');
-const env     = require('yargs').argv.mode;
-const webpack = require('webpack');
+const isProd = process.env.ENV === 'prod'
+const path = require('path')
 
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-
-const libraryName = 'vue-i18n-directives';
-
-const plugins = [];
-let outputFile;
-
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
-  outputFile = `${libraryName}.min.js`;
-} else {
-  outputFile = `${libraryName}.js`;
-}
+const libraryName = 'vue-i18n-directives'
+const projectRoot = path.resolve(__dirname, '/')
+const outputFile = isProd ? `${libraryName}.min.js` : `${libraryName}.js`
 
 const config = {
   entry: `${__dirname}/src/index.js`,
-  devtool: 'source-map',
+
+  devtool: isProd ? 'source-map' : false,
+
   output: {
-    path: `${__dirname}/lib`,
+    path: `${__dirname}/dist`,
     filename: outputFile,
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
+
   module: {
-    loaders: [
+    rules: [
       {
-        test: /(\.jsx|\.js)$/,
-        loader: 'babel',
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        include: projectRoot,
         exclude: /(node_modules|bower_components)/
       },
       {
-        test: /(\.jsx|\.js)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: projectRoot,
+        exclude: /(node_modules|bower_components)/
       }
     ]
-  },
-  resolve: {
-    root: path.resolve('./src'),
-    extensions: ['', '.js']
-  },
-  plugins
-};
+  }
+}
 
-module.exports = config;
+module.exports = config
