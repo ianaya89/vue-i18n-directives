@@ -203,6 +203,7 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.translateLower = exports.translateUpper = exports.translateCapitalize = exports.translatePlaceholder = exports.translate = undefined;
 
 var _tDirective = __webpack_require__(0);
 
@@ -225,6 +226,13 @@ var _tlDirective = __webpack_require__(2);
 var _tlDirective2 = _interopRequireDefault(_tlDirective);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.translate = _tDirective2.default;
+exports.translatePlaceholder = _tpDirective2.default;
+exports.translateCapitalize = _tcDirective2.default;
+exports.translateUpper = _tuDirective2.default;
+exports.translateLower = _tlDirective2.default;
+
 
 var plugin = {
   install: function install(Vue) {
