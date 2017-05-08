@@ -46,12 +46,13 @@ Vue.use(VueI18nDirectives);
 </script>
 
 <template lang="pug">
-  <h1 v-t="'user.name'"></h1>     <!-- normal translation -->
-  <input v-tp="user.password'"/> <!-- placeholder translation -->
+  <h1 v-t="'user.name'"></h1>      <!-- normal translation -->
+  <input v-tp="user.password'"/>   <!-- placeholder translation -->
 
   <p v-tc="'user.jobTitle'"></p>   <!-- capitalize translation -->
   <p v-tu="'user.role'"></p>       <!-- uppercase translation -->
   <p v-tl="'user.nickname'"></p>   <!-- lowercase translation -->
+
   <p v-tr="'user.profile'">This will be overwritten</p>   <!-- replace translation -->
 </template>
 
