@@ -162,16 +162,19 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  update: function update(el, binding, vnode) {
-    var vm = vnode.context;
-    if (vm.i18n === false) {
-      return binding.value;
-    }
-
-    var placeholder = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.placeholder += placeholder;
+function translatePlaceholder(el, binding, vnode) {
+  var vm = vnode.context;
+  if (vm.i18n === false) {
+    return binding.value;
   }
+
+  var placeholder = vm.$t ? vm.$t(binding.value) : binding.value;
+  el.placeholder = placeholder;
+}
+
+exports.default = {
+  bind: translatePlaceholder,
+  update: translatePlaceholder
 };
 
 /***/ }),
