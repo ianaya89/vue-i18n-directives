@@ -181,16 +181,16 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  update: function update(el, binding, vnode) {
-    var vm = vnode.context;
-    if (vm.i18n === false) {
-      return binding.value;
-    }
+function translateReset(el, binding, vnode) {
+  var vm = vnode.context;
 
-    var text = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.innerHTML = text;
-  }
+  var text = vm.i18n && vm.$t ? vm.$t(binding.value) : binding.value;
+  el.innerHTML = text;
+}
+
+exports.default = {
+  bind: translateReset,
+  update: translateReset
 };
 
 /***/ }),
