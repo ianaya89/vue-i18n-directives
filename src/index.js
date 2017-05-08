@@ -1,16 +1,22 @@
-import tDirective from './t-directive'
-import tpDirective from './tp-directive'
-import tcDirective from './tc-directive'
-import tuDirective from './tu-directive'
-import tlDirective from './tl-directive'
+import translate from './t-directive'
+import translatePlaceholder from './tp-directive'
+import translateCapitalize from './tc-directive'
+import translateUpper from './tu-directive'
+import translateLower from './tl-directive'
+
+export { translate }
+export { translatePlaceholder }
+export { translateCapitalize }
+export { translateUpper }
+export { translateLower }
 
 const plugin = {
   install (Vue) {
-    Vue.directive('t', tDirective)
-    Vue.directive('tp', tpDirective)
-    Vue.directive('tc', tcDirective)
-    Vue.directive('tu', tuDirective)
-    Vue.directive('tl', tlDirective)
+    Vue.directive('t', translate)
+    Vue.directive('tp', translatePlaceholder)
+    Vue.directive('tc', translateCapitalize)
+    Vue.directive('tu', translateUpper)
+    Vue.directive('tl', translateLower)
   }
 }
 
