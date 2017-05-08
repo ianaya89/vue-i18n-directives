@@ -86,16 +86,19 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  update: function update(el, binding, vnode) {
-    var vm = vnode.context;
-    if (vm.i18n === false) {
-      return binding.value;
-    }
-
-    var text = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.innerHTML += text;
+function translate(el, binding, vnode) {
+  var vm = vnode.context;
+  if (vm.i18n === false) {
+    return binding.value;
   }
+
+  var text = vm.$t ? vm.$t(binding.value) : binding.value;
+  el.innerHTML += text;
+}
+
+exports.default = {
+  bind: translate,
+  update: translate
 };
 
 /***/ }),
