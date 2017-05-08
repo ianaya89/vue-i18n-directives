@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -189,7 +189,7 @@ exports.default = {
     }
 
     var text = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.innerHTML += text.toUpperCase();
+    el.innerHTML = text;
   }
 };
 
@@ -203,7 +203,29 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.translateLower = exports.translateUpper = exports.translateCapitalize = exports.translatePlaceholder = exports.translate = undefined;
+exports.default = {
+  update: function update(el, binding, vnode) {
+    var vm = vnode.context;
+    if (vm.i18n === false) {
+      return binding.value;
+    }
+
+    var text = vm.$t ? vm.$t(binding.value) : binding.value;
+    el.innerHTML += text.toUpperCase();
+  }
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.translateReplace = exports.translateLower = exports.translateUpper = exports.translateCapitalize = exports.translatePlaceholder = exports.translate = undefined;
 
 var _tDirective = __webpack_require__(0);
 
@@ -217,13 +239,17 @@ var _tcDirective = __webpack_require__(1);
 
 var _tcDirective2 = _interopRequireDefault(_tcDirective);
 
-var _tuDirective = __webpack_require__(4);
+var _tuDirective = __webpack_require__(5);
 
 var _tuDirective2 = _interopRequireDefault(_tuDirective);
 
 var _tlDirective = __webpack_require__(2);
 
 var _tlDirective2 = _interopRequireDefault(_tlDirective);
+
+var _trDirective = __webpack_require__(4);
+
+var _trDirective2 = _interopRequireDefault(_trDirective);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -232,6 +258,7 @@ exports.translatePlaceholder = _tpDirective2.default;
 exports.translateCapitalize = _tcDirective2.default;
 exports.translateUpper = _tuDirective2.default;
 exports.translateLower = _tlDirective2.default;
+exports.translateReplace = _trDirective2.default;
 
 
 var plugin = {
@@ -241,6 +268,7 @@ var plugin = {
     Vue.directive('tc', _tcDirective2.default);
     Vue.directive('tu', _tuDirective2.default);
     Vue.directive('tl', _tlDirective2.default);
+    Vue.directive('tr', _trDirective2.default);
   }
 };
 
