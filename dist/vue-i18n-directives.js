@@ -93,7 +93,7 @@ function translate(el, binding, vnode) {
   }
 
   var text = vm.$t ? vm.$t(binding.value) : binding.value;
-  el.innerHTML += text;
+  el.innerText = text;
 }
 
 exports.default = {
@@ -126,7 +126,7 @@ exports.default = {
       });
     }
 
-    el.innerHTML += text;
+    el.innerText = text;
   }
 };
 
@@ -148,7 +148,7 @@ exports.default = {
     }
 
     var text = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.innerHTML += text.toLowerCase();
+    el.innerText = text.toLowerCase();
   }
 };
 
@@ -217,7 +217,7 @@ exports.default = {
     }
 
     var text = vm.$t ? vm.$t(binding.value) : binding.value;
-    el.innerHTML += text.toUpperCase();
+    el.innerText = text.toUpperCase();
   }
 };
 

@@ -3,7 +3,7 @@ function translate (el, binding, vnode) {
   if (vm.i18n === false) { return binding.value }
 
   const text = vm.$t ? vm.$t(binding.value) : binding.value
-  el.innerHTML += text
+  el.innerText = text
 }
 
 export default {
