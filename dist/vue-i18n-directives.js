@@ -93,6 +93,10 @@ function translate(el, binding, vnode) {
   }
 
   var text = vm.$t ? vm.$t(binding.value) : binding.value;
+  if (!text) {
+    text = '';
+  }
+
   el.innerText = text;
 }
 
@@ -115,6 +119,10 @@ function translateAppend(el, binding, vnode) {
   var vm = vnode.context;
 
   var text = vm.i18n && vm.$t ? vm.$t(binding.value) : binding.value;
+  if (!text) {
+    text = '';
+  }
+
   el.innerHTML += text;
 }
 
@@ -141,7 +149,9 @@ function translateCapitalize(el, binding, vnode) {
 
   var text = vm.$t ? vm.$t(binding.value) : binding.value;
 
-  if (text) {
+  if (!text) {
+    text = '';
+  } else {
     text = text.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
@@ -172,6 +182,10 @@ function translateLower(el, binding, vnode) {
   }
 
   var text = vm.$t ? vm.$t(binding.value) : binding.value;
+  if (!text) {
+    text = '';
+  }
+
   el.innerText = text.toLowerCase();
 }
 
@@ -197,6 +211,10 @@ function translatePlaceholder(el, binding, vnode) {
   }
 
   var placeholder = vm.$t ? vm.$t(binding.value) : binding.value;
+  if (!placeholder) {
+    placeholder = '';
+  }
+
   el.placeholder = placeholder;
 }
 
@@ -222,6 +240,10 @@ function translateUpper(el, binding, vnode) {
   }
 
   var text = vm.$t ? vm.$t(binding.value) : binding.value;
+  if (!text) {
+    text = '';
+  }
+
   el.innerText = text.toUpperCase();
 }
 
