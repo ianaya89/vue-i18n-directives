@@ -15,12 +15,12 @@
 `$ yarn add vue-i18n-directives`
 
 ### Directives
-1. `v-t`  ➡️ Translate and append text through element `innerHTML`.
-1. `v-tr` ➡️ Translate and replace text through element `innerHTML` (overwrites existing content).
+1. `v-t`  ➡️ Translate and set text through element `innerText`.
+1. `v-ta` ➡️ Translate and append text through element `innerText`
 2. `v-tp` ➡️ Translate and set text to input `placeholder`.
-3. `v-tc` ➡️ Translate and append capitalized text through element `innerHTML`.
-4. `v-tu` ➡️ Translate and append uppercased text through element `innerHTML`.
-5. `v-tl` ➡️ Translate and append lowercased text through element `innerHTML`.
+3. `v-tc` ➡️ Translate and set capitalized text through element `innerText`.
+4. `v-tu` ➡️ Translate and set uppercased text through element `innerText`.
+5. `v-tl` ➡️ Translate and set lowercased text through element `innerText`.
 
 ### Usage
 ```javascript
@@ -53,7 +53,7 @@ Vue.use(VueI18nDirectives);
   <p v-tu="'user.role'"></p>       <!-- uppercase translation -->
   <p v-tl="'user.nickname'"></p>   <!-- lowercase translation -->
 
-  <p v-tr="'user.profile'">This will be overwritten</p>   <!-- replace translation -->
+  <p v-ta="'user.profile'">This will not be overwritten</p>   <!-- append translation -->
 </template>
 
 ```
