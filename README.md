@@ -70,6 +70,9 @@ $ npm run test
 
 # build
 $ npm run build
+
+# docs
+$ npm run docs
 ```
 
 ## License
