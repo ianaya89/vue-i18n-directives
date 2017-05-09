@@ -1,9 +1,12 @@
-export default {
-  update (el, binding, vnode) {
-    const vm = vnode.context
-    if (vm.i18n === false) { return binding.value }
+function translateLower (el, binding, vnode) {
+  const vm = vnode.context
+  if (vm.i18n === false) { return binding.value }
 
-    const text = vm.$t ? vm.$t(binding.value) : binding.value
-    el.innerText = text.toLowerCase()
-  }
+  const text = vm.$t ? vm.$t(binding.value) : binding.value
+  el.innerText = text.toLowerCase()
+}
+
+export default {
+  bind: translateLower,
+  update: translateLower
 }
