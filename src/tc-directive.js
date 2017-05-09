@@ -4,7 +4,9 @@ function translateCapitalize (el, binding, vnode) {
 
   let text = vm.$t ? vm.$t(binding.value) : binding.value
 
-  if (text) {
+  if (!text) {
+    text = ''
+  } else {
     text = text.replace(/\w\S*/g, (txt) =>
       txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     )
