@@ -12,6 +12,7 @@
 
 ### Installation
 `$ npm i -S vue-i18n-directives`
+
 `$ yarn add vue-i18n-directives`
 
 ### Directives
