@@ -13,7 +13,7 @@ const config = {
   output: {
     path: `${__dirname}/dist`,
     filename: outputFile,
-    library: libraryName,
+    library: 'VueI18nDirectives',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

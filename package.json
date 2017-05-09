@@ -18,8 +18,9 @@
   "scripts": {
     "build": "ENV=prod webpack --progress --colors -p",
     "build:dev": "ENV=dev webpack --progress --colors",
-    "dev": "ENV=dev webpack --progress --colors --watch",
     "cover": "open coverage/lcov-report/index.html",
+    "dev": "browser-sync start --server 'docs/' --files 'docs/'",
+    "docs": "npm run build:dev && cp dist/vue-i18n-directives.js docs/",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint . --fix",
     "test": "jest --coverage",
@@ -29,6 +30,7 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.4.0",
+    "browser-sync": "^2.18.8",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.7.1",

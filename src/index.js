@@ -12,7 +12,7 @@ export { translateUpper }
 export { translateLower }
 export { translateAppend }
 
-const plugin = {
+const VueI18nDirectives = {
   install (Vue) {
     Vue.directive('t', translate)
     Vue.directive('tu', translateUpper)
@@ -23,4 +23,4 @@ const plugin = {
   }
 }
 
-export default plugin
+export default VueI18nDirectives
