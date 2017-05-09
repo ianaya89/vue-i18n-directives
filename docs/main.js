@@ -48,7 +48,15 @@ new Vue({ // eslint-disable-line no-new
 
   data () {
     return {
-      title: 'hi'
+      title: 'hi',
+
+      code: `
+        <p v-t="'hi'"></p>
+        <p v-tc="'hi'"></p>
+        <p v-tu="'hi'"></p>
+        <p v-tl="'hi'"></p>
+        <input v-tp="'hi'">
+      `
     }
   },
 
