@@ -1,3 +1,4 @@
 node_modules
 coverage
 dist
+docs/vue-i18n-directives.js
