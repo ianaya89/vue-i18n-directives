@@ -1,7 +1,7 @@
 {
   "name": "vue-i18n-directives",
-  "version": "3.0.0",
-  "description": "Helper directives for vue & vue-i18n",
+  "version": "3.0.1",
+  "description": ":flags: Helper directives for vue & vue-i18n",
   "main": "dist/vue-i18n-directives.min.js",
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
   "license": "MIT",
